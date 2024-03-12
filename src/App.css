@@ -1,0 +1,19 @@
+*{
+  margin : 0;
+  font-family :"Amazon Ember", Arial, sans-serif;
+}
+
+@media (max-width:452px) {
+  .app {
+    width: 1142px;
+}
+}
+@media (min-width: 453px) and (max-width: 999px) {
+}
+
+@media (min-width:1142px) {
+  .app {
+    width: 1519px;
+    right: 0;
+}
+}

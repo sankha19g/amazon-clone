@@ -1,0 +1,104 @@
+.product__rating{
+    display: flex;
+    align-items: center;
+    
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    max-height: 400px;
+    min-width: 100px;
+    margin: 10px;
+    padding: 20px;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+    
+}
+.product> img{
+    max-height: 200px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.product> img:hover{
+    transform: scale(1.01);
+}
+.product__price{
+    margin-top: 5px;
+    
+}
+.product__price__symbol{
+    display: inline;
+}
+.product__price__price{
+    font-size: 28px;
+    font-weight: normal;
+    font-family :"Amazon Ember", Arial, sans-serif;
+    margin-right: 5px;
+}
+.product__price__discount{
+    font-size: 28px;
+    font-weight: normal;
+    color: #cc1c39;
+    font-family :"Amazon Ember", Arial, sans-serif;
+    margin-right: 5px;
+}
+
+.product__price__original{
+    font-size: 13px;
+    color: rgb(86, 89, 89);
+    font-weight: 200;
+
+}
+
+.product__info{
+    height: 100px;
+    margin-bottom: 15px;
+}
+.product> button{
+    background-color: #FFD814;
+    border: 1px solid;
+    border-color: #FCD200;
+    border-radius: 100px;
+    width: 200px;
+    height: 33px;
+    cursor: pointer;
+    margin-top: 27px;
+ 
+}
+.product> button:hover{
+    background-color: #e8aa1a;
+   
+}
+.product> button:active{
+    color: rgb(255, 255, 255);
+    background-color: black;
+   
+}
+
+.product__reviews{
+    font-size: 13px;
+    color: #007185;
+}
+
+.product__brand{
+    font-weight: 700;
+    font-size :16px;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    
+}
+.product__brand:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.StarIcon{
+    color: #ffa41c;
+
+}
+.StarBorderIcon{
+    color: #ec9c4a;
+}

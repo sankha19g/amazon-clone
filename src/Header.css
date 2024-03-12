@@ -1,0 +1,110 @@
+/* amazon logo */
+/* objectfit contain will help the logo to be always be same if we resize browser */
+.header__logo{
+width:100px;
+object-fit: contain;
+margin-top: 18px;
+margin-left: 20px;
+margin-right: 20px;
+
+}
+.header{
+    background-color: #131921;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+/* flex1 uses to take max amount of screen */
+.header__search{
+    display: flex;
+    flex: 1;
+    
+}
+/* searchicon */
+/* !important removes their default css rules and use our css */
+.header__searchIcon{
+    background-color: #cd9042;
+    padding: 5px;
+    height: 22px !important;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+}
+.header__searchInput{
+    height: 12px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+::placeholder{
+    color: gray;
+}
+.header__nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.header__link{
+    color: white;
+    text-decoration: none;
+   
+}
+.header__option{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.header__option:hover{
+    transform: scale(1.05);
+    
+}
+.header__optionLineOne{
+    font-size: 12px;
+    color: white;
+    font-weight:400 ;
+    line-height: 14px;
+}
+.header__optionLineTwo{
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    line-height: 15px;
+}
+.header__optionBasket{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.header__basketCount{
+    margin-left: 5px;
+    margin-right: 10px;
+    color: rgb(240, 136, 4);
+   
+}
+
+.header__optionlocation{
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.cart{
+    display: flex;
+    flex-direction: row;
+    /* align-items: flex-end; */
+    margin-right: 10px;
+}
+.cart__text{
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    line-height: 15px;
+    margin-top: 17px;
+}

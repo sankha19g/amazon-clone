@@ -1,0 +1,32 @@
+.footer{
+    width:100%;
+    transition: all 0.2s;
+}
+.detail{
+    background-color: #232f3e;
+    height:375px;
+}
+.table{
+    margin:0 150px;
+    height:100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top:50px;
+}
+.table div{
+    width:230px;
+}
+.t-head{
+    font-size: 16px;
+    color:white;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.table li{
+    color: rgb(223,221,221);
+    padding-top:10px;
+    font-weight: lighter;
+    list-style: none;
+    font-size: 14px;
+    margin-left: -39px;
+}
