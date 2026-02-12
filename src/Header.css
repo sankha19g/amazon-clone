@@ -1,110 +1,298 @@
-/* amazon logo */
-/* objectfit contain will help the logo to be always be same if we resize browser */
-.header__logo{
-width:100px;
-object-fit: contain;
-margin-top: 18px;
-margin-left: 20px;
-margin-right: 20px;
+.header {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  background-color: #131921;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 
+.header__logo {
+  width: 100px;
+  object-fit: contain;
+  margin: 10px 20px 0 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
-.header{
-    background-color: #131921;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-/* flex1 uses to take max amount of screen */
-.header__search{
-    display: flex;
-    flex: 1;
-    
-}
-/* searchicon */
-/* !important removes their default css rules and use our css */
-.header__searchIcon{
-    background-color: #cd9042;
-    padding: 5px;
-    height: 22px !important;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    cursor: pointer;
-}
-.header__searchInput{
-    height: 12px;
-    padding: 10px;
-    border: none;
-    width: 100%;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
-::placeholder{
-    color: gray;
-}
-.header__nav{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 
+.header__logo:hover {
+  transform: scale(1.05);
 }
-.header__link{
-    color: white;
+
+.header__optionlocation {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-right: 15px;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header__optionlocation:hover {
+  border: 1px solid white;
+}
+
+.header__search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.2s;
+  background-color: white;
+  margin: 0 15px;
+}
+
+.header__search:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header__search:focus-within {
+  box-shadow: 0 0 0 3px #ff9900;
+}
+
+.header__searchInput {
+  height: 34px;
+  padding: 0 12px;
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  color: #111;
+}
+
+.header__searchIcon {
+  padding: 5px;
+  height: 24px !important;
+  width: 45px !important;
+  background-color: #febd69;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__searchIcon:hover {
+  background-color: #f3a847;
+}
+
+.header__searchIcon:active {
+  transform: scale(0.92);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav a {
     text-decoration: none;
-   
 }
-.header__option{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
+
+.header__option {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
 }
-.header__option:hover{
-    transform: scale(1.05);
-    
+
+.header__option:hover {
+  border: 1px solid white;
 }
-.header__optionLineOne{
-    font-size: 12px;
-    color: white;
-    font-weight:400 ;
-    line-height: 14px;
+
+.header__option:active {
+    background-color: rgba(255,255,255,0.05);
 }
-.header__optionLineTwo{
+
+.header__optionLineOne {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.header__optionLineTwo {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: 10px;
+}
+
+.cart:hover {
+  border: 1px solid white;
+}
+
+.header__optionBasket {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header__basketCount {
+  position: absolute;
+  top: -8px;
+  right: -5px;
+  background-color: #f08804;
+  color: #131921;
+  font-weight: 800;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  animation: basketPop 0.3s ease-out;
+}
+
+@keyframes basketPop {
+  0% { transform: scale(0.5); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.cart__text {
     font-size: 14px;
-    font-weight: 700;
-    color: white;
-    line-height: 15px;
-}
-.header__optionBasket{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-}
-.header__basketCount{
+    font-weight: 800;
     margin-left: 5px;
-    margin-right: 10px;
-    color: rgb(240, 136, 4);
-   
+    margin-top: 10px;
 }
 
-.header__optionlocation{
-    display: flex;
-    flex-direction: row;
-    color: white;
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        padding: 8px 12px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* First Row: Logo and Account/Cart */
+    .header__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        order: 1;
+        margin-bottom: 8px;
+    }
+
+    .header__logo {
+        width: 75px;
+        margin: 0;
+        order: 1;
+    }
+
+    /* Container for nav items on mobile */
+    .header__nav-right {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        order: 2;
+    }
+
+    /* Second Row: Search */
+    .header__search {
+        width: 100%;
+        margin: 0;
+        order: 2;
+        border-radius: 8px;
+    }
+
+    .header__searchInput {
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .header__option {
+        padding: 6px 4px;
+        margin: 0;
+        border: none;
+    }
+
+    /* Hide Location and Prime on mobile to save space */
+    .header__optionlocation,
+    .header__nav > a:nth-child(3) {
+        display: none !important;
+    }
+
+    .header__optionLineOne {
+        font-size: 11px;
+    }
+
+    .header__optionLineTwo {
+        font-size: 13px;
+    }
+
+    .cart {
+        padding: 4px;
+        margin-left: 5px;
+    }
+
+    .cart__text {
+        display: none; /* Hide 'Cart' text on mobile, just icon is enough */
+    }
+
+    .header__basketCount {
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+        top: -4px;
+        right: -4px;
+    }
 }
 
-.cart{
-    display: flex;
-    flex-direction: row;
-    /* align-items: flex-end; */
-    margin-right: 10px;
+/* Specific item hiding logic for Header.js structure */
+@media (max-width: 768px) {
+    /* Hide the 'Your Prime' option div */
+    .header__nav > .header__option {
+        display: none;
+    }
 }
-.cart__text{
-    font-size: 14px;
-    font-weight: 700;
-    color: white;
-    line-height: 15px;
-    margin-top: 17px;
+
+@media (max-width: 480px) {
+    .header {
+        padding: 6px 10px;
+    }
+
+    .header__logo {
+        width: 65px;
+    }
+
+    .header__searchInput {
+        height: 38px;
+    }
+
+    .header__optionLineOne {
+        font-size: 10px;
+    }
+
+    .header__optionLineTwo {
+        font-size: 11px;
+    }
 }

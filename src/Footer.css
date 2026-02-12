@@ -1,32 +1,104 @@
-.footer{
-    width:100%;
-    transition: all 0.2s;
+.footer {
+    width: 100%;
 }
-.detail{
+
+.detail {
     background-color: #232f3e;
-    height:375px;
+    padding-bottom: 50px;
 }
-.table{
-    margin:0 150px;
-    height:100%;
+
+.table {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-around;
-    padding-top:50px;
+    justify-content: space-between;
+    padding: 50px 20px 0 20px;
+    flex-wrap: wrap;
+    gap: 30px;
 }
-.table div{
-    width:230px;
+
+.table > div {
+    min-width: 200px;
+    flex: 1;
 }
-.t-head{
+
+.t-head {
     font-size: 16px;
-    color:white;
+    color: white;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
 }
-.table li{
-    color: rgb(223,221,221);
-    padding-top:10px;
-    font-weight: lighter;
+
+.table ul {
     list-style: none;
+    padding: 0;
+}
+
+.table li {
+    color: #DDD;
+    padding: 6px 0;
+    font-weight: 400;
     font-size: 14px;
-    margin-left: -39px;
+    cursor: pointer;
+    transition: color 0.1s;
+}
+
+.table li:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .table {
+        padding-top: 30px;
+        gap: 25px;
+    }
+
+    .table > div {
+        min-width: 45%; /* Show 2 columns on tablets */
+    }
+
+    .t-head {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .table li {
+        padding: 8px 0;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail {
+        padding-bottom: 20px;
+    }
+
+    .table {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 20px 10px 0 10px;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    .table > div {
+        width: calc(50% - 10px);
+        min-width: calc(50% - 10px);
+        margin: 0;
+    }
+
+    .t-head {
+        font-size: 11px;
+        margin-bottom: 4px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .table li {
+        padding: 3px 0;
+        font-size: 9px;
+    }
 }

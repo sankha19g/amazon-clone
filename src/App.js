@@ -9,16 +9,18 @@ import Login from "./Login";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 import Footer from "./Footer";
+import Payment from "./Payment";
+import Orders from "./Orders";
 
 
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const [{ }, dispatch] = useStateValue();
 
   useEffect(() => {
     // will only run once when the app component loads...
 
-    auth.onAuthStateChanged((authUser) => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
       console.log("THE USER IS >>> ", authUser);
 
       if (authUser) {
@@ -37,32 +39,57 @@ function App() {
       }
     });
 
-  
-  }, []);
+    return () => {
+      unsubscribe();
+    };
+
+
+  }, [dispatch]);
 
   return (
     <Router>
- <div className="app">
-       <Switch>
-<Route path="/checkout">
-<Header />
-<Checkout />
-</Route>
+      <div className="app">
+        <Switch>
+          <Route path="/checkout">
+            <Header />
+            <div className="app__body">
+              <Checkout />
+            </div>
+            <Footer />
+          </Route>
 
-<Route path="/login" >
- <Login />
-</Route>
+          <Route path="/login" >
+            <Login />
+          </Route>
 
-{/* default route */}
-<Route path="/">
-  <Header />
-  <Headermini/>
-  <Home />
-  <Footer/>
-</Route>
+          <Route path="/orders" >
+            <Header />
+            <div className="app__body">
+              <Orders />
+            </div>
+            <Footer />
+          </Route>
 
-      </Switch>
-    </div>
+          <Route path="/payment" >
+            <Header />
+            <div className="app__body">
+              <Payment />
+            </div>
+            <Footer />
+          </Route>
+
+          {/* default route */}
+          <Route exact path="/">
+            <Header />
+            <Headermini />
+            <div className="app__body">
+              <Home />
+            </div>
+            <Footer />
+          </Route>
+
+        </Switch>
+      </div>
     </Router>
   );
 }

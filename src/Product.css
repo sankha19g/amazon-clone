@@ -1,104 +1,256 @@
-.product__rating{
-    display: flex;
-    align-items: center;
-    
-}
-.product{
+.product {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    max-height: 400px;
-    min-width: 100px;
-    margin: 10px;
-    padding: 20px;
-    width: 100%;
     background-color: white;
     z-index: 1;
-    
-}
-.product> img{
-    max-height: 200px;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 20px;
     width: 100%;
-    object-fit: contain;
+    max-height: 440px;
+    min-width: 100px;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.product__info {
+    height: 120px;
     margin-bottom: 15px;
-    cursor: pointer;
-}
-.product> img:hover{
-    transform: scale(1.01);
-}
-.product__price{
-    margin-top: 5px;
-    
-}
-.product__price__symbol{
-    display: inline;
-}
-.product__price__price{
-    font-size: 28px;
-    font-weight: normal;
-    font-family :"Amazon Ember", Arial, sans-serif;
-    margin-right: 5px;
-}
-.product__price__discount{
-    font-size: 28px;
-    font-weight: normal;
-    color: #cc1c39;
-    font-family :"Amazon Ember", Arial, sans-serif;
-    margin-right: 5px;
+    width: 100%;
 }
 
-.product__price__original{
-    font-size: 13px;
-    color: rgb(86, 89, 89);
-    font-weight: 200;
-
+.product__brand {
+    font-weight: 700;
+    font-size: 14px;
+    color: #565959;
+    margin-bottom: 4px;
 }
 
-.product__info{
-    height: 100px;
-    margin-bottom: 15px;
-}
-.product> button{
-    background-color: #FFD814;
-    border: 1px solid;
-    border-color: #FCD200;
-    border-radius: 100px;
-    width: 200px;
-    height: 33px;
-    cursor: pointer;
-    margin-top: 27px;
- 
-}
-.product> button:hover{
-    background-color: #e8aa1a;
-   
-}
-.product> button:active{
-    color: rgb(255, 255, 255);
-    background-color: black;
-   
+.product__info > p:nth-child(2) {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0F1111;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 44px;
+    margin-bottom: 8px;
 }
 
-.product__reviews{
+.product__rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.product__ratingValue {
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 4px;
+    color: #0F1111;
+}
+
+.product__stars {
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+}
+
+.product__starIcon,
+.product__starBorderIcon {
+    font-size: 18px !important;
+    color: #ffa41c;
+}
+
+.product__reviews {
     font-size: 13px;
     color: #007185;
 }
 
-.product__brand{
-    font-weight: 700;
-    font-size :16px;
-    font-family: "Amazon Ember", Arial, sans-serif;
-    
+.product__price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
 }
-.product__brand:hover{
-    text-decoration: underline;
-    cursor: pointer;
-}
-.StarIcon{
-    color: #ffa41c;
 
+.product__price__discount {
+    font-size: 24px;
+    font-weight: 300;
+    color: #cc1c39;
 }
-.StarBorderIcon{
-    color: #ec9c4a;
+
+.product__price__symbol {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.product__price__price {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.product__price__original {
+    font-size: 12px;
+    color: #565959;
+    margin-left: 8px;
+}
+
+.product > img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.product > img:hover {
+    transform: scale(1.05);
+}
+
+.product > button {
+    background-color: #ffd814;
+    border: 1px solid #fcd200;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 200px;
+    height: 33px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(213,217,217,0.5);
+    transition: background-color 0.2s;
+    margin-top: auto;
+}
+
+.product > button:hover {
+    background-color: #f7ca00;
+}
+
+.product > button:active {
+    background-color: #f0b800;
+    box-shadow: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .product {
+        padding: 5px;
+        max-height: none;
+    }
+
+    .product__info {
+        height: auto;
+        margin-bottom: 5px;
+    }
+
+    .product__brand {
+        font-size: 10px;
+    }
+
+    .product__info > p:nth-child(2) {
+        font-size: 11px;
+        height: auto;
+        margin-bottom: 4px;
+    }
+
+    .product__rating {
+        margin-bottom: 3px;
+    }
+
+    .product__ratingValue {
+        font-size: 9px;
+        margin-right: 2px;
+    }
+
+    .product__stars {
+        margin-right: 2px;
+    }
+
+    .product__starIcon,
+    .product__starBorderIcon {
+        font-size: 7px !important; /* Smaller than ratingValue */
+    }
+
+    .product__reviews {
+        font-size: 7px;
+    }
+
+    .product__price__discount {
+        font-size: 13px;
+    }
+
+    .product__price__price {
+        font-size: 14px;
+    }
+
+    .product__price__original {
+        font-size: 8px;
+    }
+
+    .product > img {
+        max-height: 80px;
+        margin-bottom: 5px;
+    }
+
+    .product > button {
+        max-width: 100%;
+        font-size: 9px;
+        height: 24px;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        padding: 3px;
+    }
+
+    .product__brand {
+        font-size: 8px;
+    }
+
+    .product__info > p:nth-child(2) {
+        font-size: 9px;
+    }
+
+    .product__ratingValue {
+        font-size: 8px;
+    }
+
+    .product__starIcon,
+    .product__starBorderIcon {
+        font-size: 5px !important; /* Even smaller ratio */
+    }
+
+    .product__reviews {
+        font-size: 6px;
+    }
+
+    .product__price__discount {
+        font-size: 11px;
+    }
+
+    .product__price__price {
+        font-size: 12px;
+    }
+
+    .product > img {
+        max-height: 60px;
+    }
+
+    .product > button {
+        font-size: 8px;
+        height: 20px;
+    }
 }

@@ -3,17 +3,35 @@
   font-family :"Amazon Ember", Arial, sans-serif;
 }
 
-@media (max-width:452px) {
-  .app {
-    width: 1142px;
-}
-}
-@media (min-width: 453px) and (max-width: 999px) {
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-@media (min-width:1142px) {
-  .app {
-    width: 1519px;
-    right: 0;
+.app__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+@media (max-width: 452px) {
+  .app {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 1142px) {
+  .app {
+    max-width: 1519px;
+    margin: 0 auto;
+  }
 }

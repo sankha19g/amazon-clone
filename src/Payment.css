@@ -1,0 +1,8 @@
+.payment {
+    padding: 20px;
+    background-color: rgb(234, 237, 237);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,134 @@
+.orders {
+    padding: 30px 20px;
+    background-color: #f1f1f1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.orders > h1 {
+    margin: 20px 0;
+    max-width: 900px;
+    width: 100%;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.orders__container {
+    max-width: 900px;
+    width: 100%;
+}
+
+.orders__order {
+    background-color: white;
+    margin-bottom: 24px;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.orders__orderHeader {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 14px 20px;
+    background-color: #f0f2f2;
+    border-bottom: 1px solid #d5d9d9;
+}
+
+.orders__label {
+    font-size: 11px;
+    color: #565959;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.orders__value {
+    font-size: 13px;
+    color: #565959;
+    font-weight: 400;
+}
+
+.orders__id {
+    margin-left: auto;
+    text-align: right;
+}
+
+.orders__orderFooter {
+    text-align: right;
+    padding: 14px 20px;
+    border-top: 1px solid #eee;
+}
+
+.order__total {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.orders__empty {
+    text-align: center;
+    padding: 60px;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #565959;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .orders {
+        padding: 15px 10px;
+    }
+
+    .orders > h1 {
+        font-size: 24px;
+        margin: 15px 0;
+    }
+
+    .orders__orderHeader {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .orders__id {
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .orders__orderFooter {
+        padding: 12px 15px;
+    }
+
+    .order__total {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .orders {
+        padding: 10px 5px;
+    }
+
+    .orders > h1 {
+        font-size: 20px;
+    }
+
+    .orders__orderHeader {
+        padding: 10px;
+    }
+
+    .orders__label {
+        font-size: 10px;
+    }
+
+    .orders__value {
+        font-size: 12px;
+    }
+
+    .orders__empty {
+        padding: 40px 20px;
+        font-size: 16px;
+    }
+}
