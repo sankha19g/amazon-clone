@@ -69,7 +69,7 @@
 
 .header__searchIcon {
   padding: 5px;
-  height: 24px !important;
+height: 38px !important;
   width: 45px !important;
   background-color: #febd69;
   cursor: pointer;
@@ -268,12 +268,12 @@
 }
 
 /* Specific item hiding logic for Header.js structure */
-@media (max-width: 768px) {
-    /* Hide the 'Your Prime' option div */
+ /* Hide the 'Your Prime' option div */
+/* @media (max-width: 768px) {  
     .header__nav > .header__option {
         display: none;
     }
-}
+} */
 
 @media (max-width: 480px) {
     .header {
